@@ -14,7 +14,6 @@ Architecture
 - Lifecycles
 
 ### Networking
-- OkHttp
 - OkHttp LoggingInterceptor
 - Retrofit
 
