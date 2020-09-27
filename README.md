@@ -15,7 +15,7 @@ Architecture
 
 ### Networking
 - OkHttp
-- Dagger2
+- OkHttp LoggingInterceptor
 - Retrofit
 
 ### Image library
