@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">MavericsTest</string>
+
+    <string name="films_list">Films List</string>
+    <string name="search">Search</string>
+    <string name="rating">* %1$s</string>
+
+    <string name="director">Director: %1$s</string>
+    <string name="write">Writer: %1$s</string>
+    <string name="actors">Actors: %1$s</string>
+    <string name="score">Score: \n %1$s</string>
+    <string name="reviews">Reviews: \n %1$s</string>
+    <string name="popularity">Popularity: \n %1$s</string>
+</resources>

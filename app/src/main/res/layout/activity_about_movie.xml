@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".views.activities.AboutMovieActivity">
+
+    <ProgressBar
+        android:id="@+id/loader"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/movie_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/movie_poster"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:adjustViewBounds="true"
+            app:layout_constraintBottom_toBottomOf="@+id/guideline"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.3" />
+
+        <View
+            android:id="@+id/stripe"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_60"
+            android:background="@color/transBlack"
+            app:layout_constraintBottom_toBottomOf="@+id/movie_poster" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginLeft="@dimen/size_8"
+            android:ellipsize="end"
+            android:fontFamily="@font/titilliumweb_regular"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="@string/films_list"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/size_font_20"
+            app:layout_constraintBottom_toBottomOf="@+id/stripe"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/stripe" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/size_8"
+            android:fontFamily="@font/titilliumweb_regular"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/size_font_20"
+            app:layout_constraintBottom_toBottomOf="@+id/stripe"
+            app:layout_constraintLeft_toLeftOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/size_40"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/size_8"
+            android:layout_marginRight="@dimen/size_8"
+            android:adjustViewBounds="true"
+            android:src="@drawable/ic_play"
+            app:layout_constraintBottom_toBottomOf="@+id/stripe"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/stripe" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/category"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/size_8"
+            android:layout_marginLeft="@dimen/size_8"
+            android:fontFamily="@font/titilliumweb_regular"
+            android:maxLines="1"
+            android:text="Run time"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="@dimen/size_font_16"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/runtime"
+            app:layout_constraintTop_toTopOf="@+id/runtime" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/runtime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/size_8"
+            android:fontFamily="@font/titilliumweb_regular"
+            android:text="Run time"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="@dimen/size_font_16"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/stripe" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/rating"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/size_8"
+            android:layout_marginRight="@dimen/size_8"
+            android:fontFamily="@font/titilliumweb_regular"
+            android:gravity="end"
+            android:text="@string/rating"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="@dimen/size_font_16"
+            app:layout_constraintLeft_toRightOf="@+id/runtime"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/runtime" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/description"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_96"
+            android:layout_margin="@dimen/size_16"
+            android:fontFamily="@font/titilliumweb_regular"
+
+            android:textColor="@android:color/darker_gray"
+            android:textSize="@dimen/size_font_20"
+            app:layout_constraintTop_toBottomOf="@+id/runtime" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/size_8"
+            android:layout_marginLeft="@dimen/size_8"
+            android:fontFamily="@font/titilliumweb_regular"
+            android:gravity="center_horizontal"
+            android:maxLines="2"
+            android:text="Score"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="@dimen/size_font_16"
+            app:layout_constraintLeft_toLeftOf="parent"
+
+            app:layout_constraintTop_toTopOf="@+id/reviews" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/reviews"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/size_8"
+            android:fontFamily="@font/titilliumweb_regular"
+            android:gravity="center_horizontal"
+            android:maxLines="2"
+            android:text="Reviews"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="@dimen/size_font_16"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/description" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/popularity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/size_8"
+            android:layout_marginRight="@dimen/size_8"
+            android:fontFamily="@font/titilliumweb_regular"
+            android:gravity="center_horizontal"
+            android:maxLines="2"
+            android:text="Populatiry"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="@dimen/size_font_16"
+
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/reviews" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_2"
+            android:layout_marginTop="@dimen/size_12"
+            android:background="@color/transBlack"
+            app:layout_constraintTop_toBottomOf="@+id/reviews" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/director"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_20"
+            android:fontFamily="@font/titilliumweb_regular"
+            android:padding="@dimen/size_8"
+            android:text="Director"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="@dimen/size_font_16"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/reviews" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/writer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_12"
+            android:fontFamily="@font/titilliumweb_regular"
+            android:padding="@dimen/size_8"
+            android:text="Writer"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="@dimen/size_font_16"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/director" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/actor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_12"
+            android:fontFamily="@font/titilliumweb_regular"
+            android:padding="@dimen/size_8"
+            android:text="Director"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="@dimen/size_font_16"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/writer" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
