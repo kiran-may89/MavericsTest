@@ -10,7 +10,6 @@ Minimum Requirements
 Architecture
 ============
 ### Jetpack architecture components
-- Room
 - ViewModel
 - Lifecycles
 
